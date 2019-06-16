@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "333131035026",
+    "firebase_url": "https://attendence-system-21184.firebaseio.com",
+    "project_id": "attendence-system-21184",
+    "storage_bucket": "attendence-system-21184.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333131035026:android:115bfed8fef81b12",
+        "android_client_info": {
+          "package_name": "microautomation.attendencesystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333131035026-a84h4j804tc83df15l48hfek3jd5hsku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxJBHF_eZoMRtKXz--FzQuDZ2fF5xARzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333131035026-a84h4j804tc83df15l48hfek3jd5hsku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
