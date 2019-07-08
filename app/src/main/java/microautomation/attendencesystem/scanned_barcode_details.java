@@ -32,6 +32,10 @@ public class scanned_barcode_details extends AppCompatActivity {
          ImageView avatar=findViewById(R.id.avatar);
         user u=new Gson().fromJson(getIntent().getStringExtra("scanned_barcode_details"),user.class);
         password.setVisibility(View.GONE);
+        name.setEnabled(false);
+        roll_no.setEnabled(false);
+        email.setEnabled(false);
+
         if(u!=null) {
             name.setText(u.getName());
             roll_no.setText(u.getId());

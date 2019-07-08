@@ -10,6 +10,8 @@ import android.preference.PreferenceManager;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -135,6 +137,7 @@ public class Barcode_Scanner extends AppCompatActivity implements ZXingScannerVi
            if(myResult==null||myResult.isEmpty()){
                Toast.makeText(Barcode_Scanner.this,"Fake Card Scanned",Toast.LENGTH_LONG).show();
            }else{
+               Log.e("scan_result",myResult);
                firebase_operations.view_scanned_barcode_detail(Barcode_Scanner.this,myResult);
            }
     }

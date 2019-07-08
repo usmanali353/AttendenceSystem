@@ -73,7 +73,6 @@ Bitmap bitmap;
                  }else if(bitmap==null||image_uri==null){
                       Toast.makeText(Add_students.this,"Select Image",Toast.LENGTH_LONG).show();
                  }else {
-                     Students s = new Students();
                      firebase_operations.add_students(Add_students.this,name.getText().toString(), email.getText().toString(), password.getText().toString(),roll_no.getText().toString(), Arrays.asList(subjects.getText().toString().split(",")),"Students",image_uri);
                      name.setText("");
                      email.setText("");

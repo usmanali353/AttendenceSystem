@@ -78,7 +78,7 @@ RelativeLayout root;
                                  final TextInputEditText email=v.findViewById(R.id.email_txt);
                                  final TextInputEditText password=v.findViewById(R.id.password_txt);
                                  ImageView avatar=findViewById(R.id.avatar);
-
+                                   avatar.setVisibility(View.GONE);
                                  //final TextInputEditText phone=v.findViewById(R.id.phone_txt);
                                  Students s=new Gson().fromJson(prefs.getString("student_info",""),Students.class);
                                  if(s!=null){
@@ -90,7 +90,7 @@ RelativeLayout root;
                                      roll_no.setText(s.getId());
                                      email.setText(s.getEmail());
                                      password.setText(s.getPassword());
-                                     Picasso.get().load(s.getImage_url()).into(avatar);
+                                     //Picasso.get().load(s.getImage_url()).into(avatar);
                                  }
                                  profile.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                      @Override

@@ -323,12 +323,14 @@ attendence_ref.add(a).addOnCompleteListener(new OnCompleteListener<DocumentRefer
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
+                    dialog.dismiss();
                     user u=documentSnapshot.toObject(user.class);
                     Intent i=new Intent(context, scanned_barcode_details.class);
                     i.putExtra("scanned_barcode_details",new Gson().toJson(u));
                     context.startActivity(i);
                     ((AppCompatActivity)context).finish();
                 }else{
+                    dialog.dismiss();
                     Toast.makeText(context,"Invalid Card Scanned",Toast.LENGTH_LONG).show();
                 }
             }
