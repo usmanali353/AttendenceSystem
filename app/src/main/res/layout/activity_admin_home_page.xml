@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".admin_home_page">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -19,6 +19,9 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_admin_home_page" />
+
     <com.nightonke.boommenu.BoomMenuButton
         android:id="@+id/bmb"
         android:layout_width="wrap_content"
@@ -29,9 +32,5 @@
         app:bmb_piecePlaceEnum="piecePlace_ham_3"
         app:bmb_buttonPlaceEnum="buttonPlace_ham_3"
         />
-    <include layout="@layout/content_main" />
-
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

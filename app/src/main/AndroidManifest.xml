@@ -3,7 +3,8 @@
     package="microautomation.attendencesystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -11,8 +12,44 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login_page" android:theme="@style/AppTheme.NoActionBar" android:screenOrientation="portrait">
-
+        <activity
+            android:name=".scanned_barcode_details"
+            android:label="@string/title_activity_scanned_barcode_details"
+            android:parentActivityName=".guard_home_page"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="microautomation.attendencesystem.guard_home_page" />
+        </activity>
+        <activity
+            android:name=".guard_home_page"
+            android:label="@string/title_activity_guard_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Add_employees"
+            android:label="@string/title_activity_add_employees"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Add_students"
+            android:label="@string/title_activity_add_students"
+            android:parentActivityName=".admin_home_page"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="microautomation.attendencesystem.admin_home_page" />
+        </activity>
+        <activity
+            android:name=".faculty_home_page"
+            android:label="@string/title_activity_faculty_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".admin_home_page"
+            android:label="@string/title_activity_admin_home_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Login_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,8 +59,8 @@
         <activity
             android:name=".Attendence_page"
             android:label="@string/title_activity_attendence_page"
-            android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -31,14 +68,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".Barcode_Scanner.Barcode_Scanner"
             android:screenOrientation="portrait"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Barcode_Scanner.Barcode_Scanner"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

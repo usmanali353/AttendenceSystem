@@ -7,10 +7,13 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.zxing.Result;
 
@@ -27,13 +30,14 @@ public class Barcode_Scanner extends AppCompatActivity implements ZXingScannerVi
     SharedPreferences prefs;
     private static int camId = Camera.CameraInfo.CAMERA_FACING_BACK;
     Students s;
+    FirebaseUser user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
         prefs= PreferenceManager.getDefaultSharedPreferences(this);
-        s=new Gson().fromJson(prefs.getString("student_info",null),Students.class);
+
         getSupportActionBar().setTitle("Scan Barcode");
         int currentApiVersion = Build.VERSION.SDK_INT;
 
@@ -128,18 +132,10 @@ public class Barcode_Scanner extends AppCompatActivity implements ZXingScannerVi
     @Override
     public void handleResult(Result result) {
         final String myResult = result.getText();
-        if(s!=null){
-            if(s.getSubjects().contains(myResult)){
-                firebase_operations.add_attendence_to_firebase(Barcode_Scanner.this,s.getRoll_no(),myResult);
-            }else{
-                Toast.makeText(Barcode_Scanner.this,"You are not Enrolled in this Subject",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this, MainActivity.class));
-                finish();
-            }
-        }else {
-            Toast.makeText(Barcode_Scanner.this,"No Data Found",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this,MainActivity.class));
-            finish();
-        }
+           if(myResult==null||myResult.isEmpty()){
+               Toast.makeText(Barcode_Scanner.this,"Fake Card Scanned",Toast.LENGTH_LONG).show();
+           }else{
+               firebase_operations.view_scanned_barcode_detail(Barcode_Scanner.this,myResult);
+           }
     }
 }

@@ -2,11 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="microautomation.attendencesystem.MainActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="Add Student"
-        app:showAsAction="never" />
+
     <item
         android:id="@+id/log_out"
         android:orderInCategory="101"

@@ -7,11 +7,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Attendence_page"
     tools:showIn="@layout/activity_attendence_page">
-      <android.support.v7.widget.RecyclerView
+      <androidx.recyclerview.widget.RecyclerView
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:id="@+id/attendence_list"
           >
 
-      </android.support.v7.widget.RecyclerView>
+      </androidx.recyclerview.widget.RecyclerView>
 </RelativeLayout>

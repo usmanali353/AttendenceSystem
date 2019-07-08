@@ -2,4 +2,10 @@
     <string name="app_name">Attendence System</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_attendence_page">My Attendence</string>
+    <string name="title_activity_admin_home_page">Admin Home</string>
+    <string name="title_activity_faculty_home_page">Faculty Home</string>
+    <string name="title_activity_add_students">Add Students</string>
+    <string name="title_activity_add_employees">Add Employees</string>
+    <string name="title_activity_guard_home_page">Guard Home</string>
+    <string name="title_activity_scanned_barcode_details">Scanned Barcode Details</string>
 </resources>
