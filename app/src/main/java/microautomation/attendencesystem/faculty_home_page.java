@@ -31,7 +31,7 @@ import android.widget.ArrayAdapter;
 import java.util.Arrays;
 
 public class faculty_home_page extends AppCompatActivity {
-    int images[]={R.drawable.view_attendence};
+    int images[]={R.drawable.ic_assignment_turned_in_black_24dp};
     String texts[]={"View Attendence"};
     SharedPreferences prefs;
     @Override

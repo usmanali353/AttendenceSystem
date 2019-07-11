@@ -26,7 +26,7 @@ import android.view.View;
 
 public class guard_home_page extends AppCompatActivity {
 SharedPreferences prefs;
-    int images[]={R.drawable.verify};
+    int images[]={R.drawable.ic_verified_user_black_24dp};
     String texts[]={"Verify Students/Employees"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {

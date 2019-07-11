@@ -35,7 +35,7 @@ import microautomation.attendencesystem.Model.Students;
 import microautomation.attendencesystem.Model.user;
 
 public class admin_home_page extends AppCompatActivity {
-    int images[]={R.drawable.view_attendence,R.drawable.add_student,R.drawable.add_student};
+    int images[]={R.drawable.ic_assignment_turned_in_black_24dp,R.drawable.ic_person_add_black_24dp,R.drawable.ic_group_add_black_24dp};
     String texts[]={"View Attendence","Add Student","Add Employee"};
     SharedPreferences prefs;
 

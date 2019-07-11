@@ -85,6 +85,5 @@
         android:layout_height="200dp"
         android:id="@+id/avatar"
         android:layout_gravity="center_horizontal"
-
         />
 </LinearLayout>

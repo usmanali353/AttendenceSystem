@@ -35,12 +35,17 @@ public class scanned_barcode_details extends AppCompatActivity {
         name.setEnabled(false);
         roll_no.setEnabled(false);
         email.setEnabled(false);
+        if(u.getImage_url()==null){
+            avatar.setVisibility(View.GONE);
+        }
 
         if(u!=null) {
             name.setText(u.getName());
             roll_no.setText(u.getId());
             email.setText(u.getEmail());
-            Picasso.get().load(u.getImage_url()).into(avatar);
+            if(u.getImage_url()!=null){
+                Picasso.get().load(u.getImage_url()).into(avatar);
+            }
         }
 
     }

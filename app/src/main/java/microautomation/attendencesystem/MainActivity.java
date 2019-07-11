@@ -40,7 +40,7 @@ import microautomation.attendencesystem.Firebase_Operations.firebase_operations;
 import microautomation.attendencesystem.Model.Students;
 
 public class MainActivity extends AppCompatActivity {
-int images[]={R.drawable.view_attendence,R.drawable.profile,R.drawable.scan_fingerprint};
+int images[]={R.drawable.ic_assignment_turned_in_black_24dp,R.drawable.ic_person_black_24dp,R.drawable.fingerprint};
 String texts[]={"View Attendence","Profile","Attendence by Fingerprint"};
 AlertDialog dialog;
 Students s;
@@ -77,10 +77,13 @@ RelativeLayout root;
                                  final TextInputEditText roll_no=v.findViewById(R.id.roll_no_txt);
                                  final TextInputEditText email=v.findViewById(R.id.email_txt);
                                  final TextInputEditText password=v.findViewById(R.id.password_txt);
-                                 ImageView avatar=findViewById(R.id.avatar);
-                                   avatar.setVisibility(View.GONE);
+                                 ImageView avatar=v.findViewById(R.id.avatar);
+                                  // avatar.setVisibility(View.GONE);
                                  //final TextInputEditText phone=v.findViewById(R.id.phone_txt);
                                  Students s=new Gson().fromJson(prefs.getString("student_info",""),Students.class);
+                                 if(s.getImage_url()==null){
+                                     avatar.setVisibility(View.GONE);
+                                 }
                                  if(s!=null){
                                      name.setEnabled(false);
                                      roll_no.setEnabled(false);
@@ -90,7 +93,9 @@ RelativeLayout root;
                                      roll_no.setText(s.getId());
                                      email.setText(s.getEmail());
                                      password.setText(s.getPassword());
-                                     //Picasso.get().load(s.getImage_url()).into(avatar);
+                                     if(s.getImage_url()!=null){
+                                         Picasso.get().load(s.getImage_url()).into(avatar);
+                                     }
                                  }
                                  profile.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                      @Override
